@@ -25,7 +25,9 @@ import { Component } from '@angular/core';
 
     <h3 [style.color]="highlightColor">style binding 2</h3>
     <h3 [ngStyle]="titleStyle">style binding 3</h3>
-    `,
+
+    <p>{{greetings}}</p>
+    <button (click)="sayHello($event)">Greet</button> `,
 
   styles: [
     `
@@ -51,6 +53,7 @@ export class TestComponent {
   public hasError = false;
   public isSpecial = false;
   public highlightColor = 'orange';
+  public greetings = '';
   public messageClasses = {
     'text-success': !this.hasError,
     'text-danger': this.hasError,
@@ -64,5 +67,10 @@ export class TestComponent {
 
   greetUser() {
     return 'Hello ' + this.name;
+  }
+
+  sayHello(event: any){
+    console.log(event);
+    this.greetings = "hello menez"
   }
 }
