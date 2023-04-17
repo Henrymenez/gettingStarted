@@ -18,12 +18,20 @@ import { Component } from '@angular/core';
   <h2>Hidden second</h2>
 </ng-template> -->
 
-<div [ngSwitch]="color">
+<!-- <div [ngSwitch]="color">
 <div *ngSwitchCase="'red'">you picked red color</div>
 <div *ngSwitchCase="'blue'">you picked blue color</div>
 <div *ngSwitchCase="'green'">you picked green color</div>
 <div *ngSwitchDefault>Pick again</div>
+</div> -->
+
+
+<!-- first as f; last as l; index as i; odd as o; even as e -->
+<div *ngFor="let color of colors; index as i">
+<h2>{{i}}: {{color}}</h2>
+
 </div>
+
 
   `,
   styles: [],
@@ -31,4 +39,6 @@ import { Component } from '@angular/core';
 export class TestComponent {
   public displayName = true;
   public color = 'her';
+
+  public colors = ["red","blue","green","yellow"]
 }
