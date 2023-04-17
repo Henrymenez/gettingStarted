@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: '.app-test',
+  selector: 'app-test',
   template: `
     <!-- <h2 *ngIf="displayName; else elseBlock">Here here</h2>
     <ng-template #elseBlock>
@@ -27,11 +27,14 @@ import { Component } from '@angular/core';
 
 
 <!-- first as f; last as l; index as i; odd as o; even as e -->
-<div *ngFor="let color of colors; index as i">
+<!-- <div *ngFor="let color of colors; index as i">
 <h2>{{i}}: {{color}}</h2>
 
-</div>
+</div> -->
 
+<h2>
+  <button type="button" (click)="fireEvent()">Send Event</button>
+</h2>
 
   `,
   styles: [],
@@ -39,6 +42,13 @@ import { Component } from '@angular/core';
 export class TestComponent {
   public displayName = true;
   public color = 'her';
+ @Input("parentData") public nameArr: any;
+ 
+  public colors = ["red","blue","green","yellow"];
 
-  public colors = ["red","blue","green","yellow"]
+  @Output() public childEvent = new EventEmitter();
+
+  fireEvent(){
+    this.childEvent.emit('from child to parent');
+  }
 }

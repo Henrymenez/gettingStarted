@@ -1,1 +1,8 @@
-<div class="app-test"></div>
+<div>
+    <h1>
+        {{"Welcome " + message}}
+    </h1>
+</div>
+
+
+<app-test (childEvent)="message=$event" [parentData]="testObj"></app-test>

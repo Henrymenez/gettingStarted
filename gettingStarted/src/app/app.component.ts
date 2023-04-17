@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'gettingStarted';
+  public name = "henry from app";
+  public playersName = ["chelsea","united","arsenal"];
+public testObj = {
+  clubName: ["chelsea","united","arsenal"],
+  playersName: ["hazard","rubben","terry"],
+  boss: true,
+  title1: "here from obj"
+}
+
+public message = "";
+
 }
