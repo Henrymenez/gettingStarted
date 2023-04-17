@@ -32,16 +32,48 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 </div> -->
 
-<h2>
+<!-- componet intereaction -->
+<!-- <h2>
   <button type="button" (click)="fireEvent()">Send Event</button>
-</h2>
+</h2> -->
+
+<!-- pipes -->
+<!-- <h2>{{name}}</h2>
+<h2>{{name | lowercase}}</h2>
+<h2>{{name | uppercase}}</h2>
+<h2>{{name | titlecase }}</h2>
+<h2>{{name | slice:3:7 }}</h2>
+<h2>{{person | json}}</h2>
+<h3>{{5.67844 | number:'1.2-3'}}</h3>
+<h3>{{5.678 | number:'3.4-5'}}</h3>
+<h3>{{5.678 | number:'3.1-2'}}</h3>
+<h2>{{ 0.25 | percent }}</h2>
+<h2>{{ 0.25 | currency }}</h2>
+<h2>{{ 0.25 | currency: 'GBP' }}</h2>
+<h2>{{ 0.25 | currency: 'GBP' : 'code'}}</h2> -->
+
+<!-- <h2>{{date}}</h2>
+<h2>{{date | date: 'short'}}</h2>
+<h2>{{date | date: 'shortDate'}}</h2>
+<h2>{{date | date: 'shortTime'}}</h2>
+<h2>{{date | date: 'longTime'}}</h2>
+<h2>{{date | date: 'longDate'}}</h2>
+<h2>{{date | date: 'mediumTime'}}</h2>
+<h2>{{date | date: 'mediumDate'}}</h2> -->
+
 
   `,
   styles: [],
 })
 export class TestComponent {
+  public name = "Henry is here";
   public displayName = true;
   public color = 'her';
+  public person = {
+    "firstname": "henry",
+    "lastname": "menez"
+  }
+  public date = new Date();
  @Input("parentData") public nameArr: any;
  
   public colors = ["red","blue","green","yellow"];
